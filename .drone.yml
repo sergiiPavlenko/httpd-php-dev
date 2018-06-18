@@ -5,7 +5,7 @@ workspace:
 pipeline:
   build-and-push-image:
     image: plugins/docker
-    repo: fpfis/httpd-php
+    repo: fpfis/httpd-php-dev
     tags: [ 7.1 ]
 #	- ${DRONE_BRANCH:8:1}
 #        - ${DRONE_BRANCH##*/}
