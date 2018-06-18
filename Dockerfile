@@ -8,3 +8,8 @@ RUN curl -L https://github.com/composer/composer/releases/download/${COMPOSER_VE
 
 RUN chmod +x /usr/local/bin/composer
 RUN composer global require hirak/prestissimo
+
+RUN apk add autoconf make g++ gcc -t build-stack --no-cache && \
+    pecl install xdebug && \
+    echo "extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \ 
+    apk del build-stack --purge
