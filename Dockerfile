@@ -12,5 +12,5 @@ RUN composer global require hirak/prestissimo
 RUN apk add git mysql-client sqlite --no-cache
 RUN apk add autoconf make g++ gcc -t build-stack --no-cache && \
     pecl install xdebug && \
-    echo "extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \ 
+    echo "zend_extension=xdebug.so" > /usr/local/etc/php/conf.d/xdebug.ini && \ 
     apk del build-stack --purge
