@@ -1,4 +1,4 @@
-FROM fpfis/httpd-php:7.1
+FROM fpfis/httpd-php:5.6
 
 ENV COMPOSER_VERSION 1.6.5
 ENV COMPOSER_ALLOW_SUPERUSER 1
