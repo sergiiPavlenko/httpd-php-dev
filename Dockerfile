@@ -11,6 +11,6 @@ RUN composer global require hirak/prestissimo
 
 RUN apk add git mysql-client sqlite --no-cache
 RUN apk add autoconf make g++ gcc -t build-stack --no-cache && \
-    pecl install xdebug && \
+    pecl install xdebug-2.5.5 && \
     docker-php-ext-enable xdebug && \
     apk del build-stack --purge
