@@ -13,3 +13,7 @@ RUN apk add autoconf make g++ gcc -t build-stack --no-cache && \
     pecl install xdebug && \
     docker-php-ext-enable xdebug && \
     apk del build-stack --purge
+
+### Disable prod settings :
+RUN rm /usr/local/etc/php/conf.d/95-prod.ini &&\
+    rm /etc/apache2/conf.d/prod.conf
