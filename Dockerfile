@@ -8,7 +8,7 @@ RUN curl -L https://github.com/composer/composer/releases/download/${COMPOSER_VE
 
 RUN chmod +x /usr/local/bin/composer
 
-RUN apk add git mysql-client sqlite --no-cache
+RUN apk add git patch mysql-client sqlite --no-cache
 RUN apk add autoconf make g++ gcc -t build-stack --no-cache && \
     pecl install xdebug && \
     docker-php-ext-enable xdebug && \
