@@ -6,7 +6,7 @@ pipeline:
     auto_tag: true
     secrets: [ DOCKER_USERNAME, DOCKER_PASSWORD ]
     tags:
-      - ${DRONE_TAG/-*/}
+      - ${DRONE_TAG%%-*}
     when:
       event: tag
 
