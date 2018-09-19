@@ -11,10 +11,6 @@ RUN curl -o /usr/local/bin/gosu -SL "https://github.com/tianon/gosu/releases/dow
     && rm /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu
 
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-
 ENV COMPOSER_VERSION 1.6.5
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV PATH ${PATH}:/root/.composer/vendor/bin
@@ -35,3 +31,7 @@ RUN rm /usr/local/etc/php/conf.d/95-prod.ini &&\
 
 ### Add dev settings :
 ADD dev.ini /usr/local/etc/php/conf.d/95-dev.ini
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
